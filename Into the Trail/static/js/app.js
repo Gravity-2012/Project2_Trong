@@ -21,7 +21,7 @@ function masterTable(trailData) {
             row.append("td").text(cityName);
             // row.append("td").text(trailObjects.length);
             row.append("td").text(trailObjects.difficulty);
-            // row.append("td").text(trailObjects.stars);
+            row.append("td").text(trailObjects.stars);
     })
 }
 
@@ -39,28 +39,27 @@ press.on("click", function() {
     var cityInput = d3.select("#city").property("value");
     var nameInput = d3.select("#trailname").property("value");
     var difficultyInput = difficulty;
-    // var lengthInput = d3.select("#country").property("value");
+    // var lengthInput = d3.select("#length").property("value");
+    var starsInput = d3.select("#stars").property("value");
 
     // allows for individual filters
     var filteredData = tableData
-    
-    if(cityInput) {
-        filteredData = filteredData.filter(row => row.location === cityInput);
-        console.log(filteredData)
-    }
+
     if(nameInput) {
         filteredData = filteredData.filter(row => row.name === nameInput);
+    }
+    if(cityInput) {
+        filteredData = filteredData.filter(row => row.location === cityInput);
     }
     if(difficultyInput) {
         filteredData = filteredData.filter(row => row.difficulty === difficultyInput);
     }
     // if(lengthInput) {
-    //     filteredData = filteredData.filter(row => row.country === lengthInput);
+    //     filteredData = filteredData.filter(row => row.length === lengthInput);
     // };
-    console.log(filteredData)
-    
-    
-
+    if(starsInput) {
+        filteredData = filteredData.filter(row => row.stars === starsInput);
+    };
     // pass in masterTable again but with newly created filteredData function
     masterTable(filteredData)
 })

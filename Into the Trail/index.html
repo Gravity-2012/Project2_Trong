@@ -59,21 +59,12 @@
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="city">Enter City</label>
-                        <input class="form-control" id="city" type="text" placeholder="Estes Park">
-                      </li>
-                      <li class="filter list-group-item">
                         <label for="trailname">Enter Trail Name</label>
                         <input class="form-control" id="trailname" type="text" placeholder="Sky Pond">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="difficulty">Enter Difficulty</label>
-                        <select id="difficulty" onchange="handleDifficultyChange(this)">
-                          <option value="blueBlack">BlueBlack</option>
-                          <option value="blue">Blue</option>
-                          <option value="black">Black</option>
-                        </select>
-                        <!-- <input class="form-control" id="state" type="text" placeholder="blueBlack"> -->
+                        <label for="city">Enter City</label>
+                        <input class="form-control" id="city" type="text" placeholder="Estes Park">
                       </li>
                       <li class="filter list-group-item">
                         <label for="country">Enter Length (Miles)</label>
@@ -83,7 +74,20 @@
                           <option value="21-30">21 - 30</option>
                           <option value="31-1000">31+</option>
                         </select>
-                        <!-- <input class="form-control" id="country" type="text" placeholder="27.1"> -->
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="difficulty">Enter Difficulty</label>
+                        <select id="difficulty" onchange="handleDifficultyChange(this)">
+                          <option value="greenBlue">Beginner</option>
+                          <option value="blue">Easy</option>
+                          <option value="blueBlack">Normal</option>
+                          <option value="black">Hard</option>
+                          <option value="dBlack">Extreme</option>
+                        </select>
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="stars">Enter Rating</label>
+                        <input class="form-control" id="stars" type="number" placeholder="4.5">
                       </li>
                     </ul>
                   </div>
