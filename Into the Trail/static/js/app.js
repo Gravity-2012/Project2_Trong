@@ -17,7 +17,6 @@ function masterTable(trailData) {
         var row = tbody.append("tr");
         // only need value since we already have the keys set-up
 
-            row.append("td").text(trailObjects.id);
             row.append("td").text(trailObjects.name);
             row.append("td").text(cityName);
             // row.append("td").text(trailObjects.length);
@@ -46,7 +45,7 @@ press.on("click", function() {
     var filteredData = tableData
     
     if(cityInput) {
-        filteredData = filteredData.filter(row => row.location = cityInput);
+        filteredData = filteredData.filter(row => row.location === cityInput);
         console.log(filteredData)
     }
     if(nameInput) {
