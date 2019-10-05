@@ -3,7 +3,7 @@
     center: [38.49, -106.08],
     zoom: 7
   });
-  
+
   // Adding tile layer to the map
   var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
     attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
@@ -42,10 +42,9 @@ d3.json(url, function(response) {
 
   trails.forEach(function(data){
     markers.addLayer(L.marker([data.latitude, data.longitude])
-    .bindPopup(data.name, data.length, data.difficulty));
+    .bindPopup("<hr> <h3>Trail Name: " + data.name + "<hr> <h3>Length: " + data.length + "  Miles </h3>"));
 
   }) 
-
 
   // Add our marker cluster layer to the map
   myMap.addLayer(markers);

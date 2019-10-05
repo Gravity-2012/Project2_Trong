@@ -42,6 +42,7 @@ press.on("click", function() {
     // var lengthInput = d3.select("#length").property("value");
     var starsInput = d3.select("#stars").property("value");
 
+
     // allows for individual filters
     var filteredData = tableData
 
@@ -60,6 +61,8 @@ press.on("click", function() {
     if(starsInput) {
         filteredData = filteredData.filter(row => row.stars === starsInput);
     };
+
+
     // pass in masterTable again but with newly created filteredData function
     masterTable(filteredData)
 })
@@ -77,3 +80,4 @@ function handleLengthChange(control) {
 function handleDifficultyChange(control) {
     difficulty = control.value;
 }
+
