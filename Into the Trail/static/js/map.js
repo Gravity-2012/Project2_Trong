@@ -42,7 +42,7 @@ d3.json(url, function(response) {
 
   trails.forEach(function(data){
     markers.addLayer(L.marker([data.latitude, data.longitude])
-    .bindPopup("<hr> <h3>Trail Name: " + data.name + "<hr> <h3>Length: " + data.length + "  Miles </h3>"));
+    .bindPopup("<hr> Trail Name: " + data.name + "<hr> Length: " + data.length + "  Miles"));
 
   }) 
 
@@ -51,3 +51,5 @@ d3.json(url, function(response) {
   L.control.layers(baseMaps).addTo(myMap);
 
 });
+
+console.log(myMap.getLayers())
